@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+.table-title {
+	text-align: center;
+	font-size: 25px;
+}
+.main-table {
+/* 	width: 40%; */
+	margin: 0 auto;
+	cell-padding: 0px;
+	border-width: 1px;
+/* 	height: 400px; */
+
+}
+.main-table table tr td{
+	border: 1px solid black;
+	padding: 5px 5px 5px 5px;
+}
+.row-header {
+	text-align: center;
+	font-weight: bold;
+}
+.button-group {
+	text-align: center;
+}
+.invalidMsg {
+	color: red;
+}

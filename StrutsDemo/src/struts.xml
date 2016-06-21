@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.dev" value="true"/>
+	<package name="struts" extends="struts-default">
+		<result-types>
+		   <result-type name="tiles" 
+		   class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<action name="loginAction" class="com.quoioln.user.Login">
+			<result name="success" type="redirect">viewUserAction</result>
+<!-- 			<result name="update" type="redirectAction">updateAction</result> -->
+<!-- 			<result name="delete" type="redirectAction">deleteAction</result> -->
+			<result name="login" type="tiles">login</result>
+			<result name="input" type="tiles">login</result>
+			<result name="error" type="tiles">login</result>
+		</action>
+		
+		<action name="viewUserAction" class="com.quoioln.user.ViewUser">
+			<result name="view" type="redirectAction">loadUserAction</result>
+			<result name="add" type="redirectAction">addUserAction</result>
+			<result name="preUpdate" type="redirectAction">preUpdateUserAction</result>
+			<result name="delete" type="redirectAction">deleteUserAction</result>
+			<result name="input" type="tiles">login</result>
+		</action>
+		<action name="loadUserAction" class="com.quoioln.user.LoadUser">
+			<result name="success" type="tiles">home</result>
+			<result name="input" type="tiles">login</result>
+		</action>
+		<action name="addUserAction" class="com.quoioln.user.AddUser">
+			<result name="success" type="tiles">addUserSuccess</result>
+			<result name="input" type="tiles">addUser</result>
+		</action>
+		
+		<action name="preUpdateUserAction" class="com.quoioln.user.PreUpdateUser">
+			<result name="success" type="tiles">updateUser</result>
+			<result name="input" type="tiles">login</result>
+		</action>
+		<action name="updateUserAction" class="com.quoioln.user.UpdateUser">
+			<result name="success" type="tiles">updateUserSuccess</result>
+			<result name="input" type="tiles">login</result>
+		</action>
+<!-- 		<action name="userManagementAction" class="com.quoioln.user.AddUser"> -->
+<!-- 			<result name="update" type="tiles">update</result> -->
+<!-- 			<result name="delete" type="tiles">addUser</result> -->
+<!-- 		</action> -->
+<!-- 		<action name="addInfo" class="com.quoioln.action.AddInfo"> -->
+<!-- 			<result name="success">/WEB-INF/content/pages/addSuccess.jsp</result> -->
+<!-- 			<result name="input">/WEB-INF/content/pages/addInfo.jsp</result> -->
+<!-- 		</action> -->
+	</package>
+</struts>
